@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register settings in the database.
  * 
- * @since  1.0.0
+ * @since  5.0.0
  * @return void
  */
 add_action( 'admin_init', function() {

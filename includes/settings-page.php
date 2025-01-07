@@ -12,6 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Register settings and add settings page.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 add_action( 'admin_menu', function() {
     add_options_page(
@@ -29,13 +32,16 @@ add_action( 'admin_menu', function() {
 
 /**
  * Render the settings page.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 function slp_render_settings_page() {
     $options = get_option( 'slp_settings', [] );
 
     add_action( 'admin_post_slp_send_email', function () {
         if ( isset( $_POST['email-admin'] ) && check_admin_referer( 'slp_settings_group-options' ) ) {
-            $options = get_option( 'slp_settings', [] );
+            $options     = get_option( 'slp_settings', [] );
             $admin_email = get_option( 'admin_email' );
     
             if ( ! empty( $options['auth_key'] ) ) {
@@ -122,6 +128,8 @@ function slp_render_settings_page() {
  * Sanitize settings input.
  *
  * @param array $input Settings input.
+ * 
+ * @since  5.0.0
  * @return array Sanitized settings.
  */
 function slp_sanitize_settings( $input ) {
@@ -136,15 +144,15 @@ add_action( 'admin_post_slp_save_settings', function () {
     if ( check_admin_referer( 'slp_settings_group-options' ) ) {
         $options = get_option( 'slp_settings', [] );
 
-        // Update settings
+        // Update settings.
         $options['enable']       = isset( $_POST['slp_settings']['enable'] ) ? 1 : 0;
         $options['auth_key']     = sanitize_text_field( $_POST['slp_settings']['auth_key'] ?? '' );
         $options['redirect_url'] = esc_url_raw( $_POST['slp_settings']['redirect_url'] ?? '' );
 
-        // Save updated settings
+        // Save updated settings.
         update_option( 'slp_settings', $options );
 
-        // Handle email checkbox
+        // Handle email checkbox.
         $email_admin = isset( $_POST['email-admin'] ) ? 1 : 0;
         if ( $email_admin ) {
             $admin_email = get_option( 'admin_email' );
@@ -158,7 +166,7 @@ add_action( 'admin_post_slp_save_settings', function () {
                     )
                 );
 
-                // Add a transient for the email result
+                // Add a transient for the email result.
                 if ( $email_result ) {
                     set_transient( 'slp_email_sent', __( 'Authorization code emailed to admin.', 'stealth-login-page' ), 30 );
                 } else {
@@ -167,15 +175,15 @@ add_action( 'admin_post_slp_save_settings', function () {
             }
         }
 
-        // Redirect back to settings with a success message
+        // Redirect back to settings with a success message.
         wp_redirect( admin_url( 'options-general.php?page=stealth-login-page&settings_updated=1' ) );
         exit;
     }
 });
 
-// Display transient messages on the settings page
+// Display transient messages on the settings page.
 if ( $message = get_transient( 'slp_email_sent' ) ) {
-    echo '<div class="updated"><p>' . esc_html( $message ) . '</p></div>';
+    echo '<div class="success"><p>' . esc_html( $message ) . '</p></div>';
     delete_transient( 'slp_email_sent' );
 }
 

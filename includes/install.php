@@ -20,6 +20,9 @@ register_deactivation_hook( __FILE__, 'slp_on_deactivate' );
  * Handle plugin activation.
  *
  * @param bool $networkwide Whether the plugin is activated network-wide.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 function slp_on_activate( $networkwide = false ): void {
     if ( is_multisite() && $networkwide ) {
@@ -33,6 +36,9 @@ function slp_on_activate( $networkwide = false ): void {
  * Handle plugin deactivation.
  *
  * @param bool $networkwide Whether the plugin is deactivated network-wide.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 function slp_on_deactivate( $networkwide = false ): void {
     if ( is_multisite() && $networkwide ) {
@@ -44,6 +50,9 @@ function slp_on_deactivate( $networkwide = false ): void {
 
 /**
  * Activate the plugin for a single site.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 function slp_activate_blog(): void {
     // Add default settings if not already present.
@@ -58,6 +67,9 @@ function slp_activate_blog(): void {
 
 /**
  * Deactivate the plugin for a single site.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 function slp_deactivate_blog(): void {
     // Cleanup tasks if needed, e.g., remove scheduled hooks.
@@ -67,6 +79,9 @@ function slp_deactivate_blog(): void {
  * Handle activation or deactivation across a multisite network.
  *
  * @param callable $callback The function to call for each blog.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 function slp_handle_multisite_activation( callable $callback ): void {
     global $wpdb;
@@ -92,6 +107,9 @@ function slp_handle_multisite_activation( callable $callback ): void {
  * @param string $path    Blog path.
  * @param int    $site_id Site ID.
  * @param array  $meta    Blog metadata.
+ * 
+ * @since  5.0.0
+ * @return void
  */
 add_action( 'wpmu_new_blog', function( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
     if ( is_plugin_active_for_network( plugin_basename( __FILE__ ) ) ) {
@@ -101,17 +119,23 @@ add_action( 'wpmu_new_blog', function( $blog_id, $user_id, $domain, $path, $site
     }
 }, 10, 6 );
 
+// Create variable for settings link filter.
+$plugin_name = plugin_basename( __FILE__ );
+
 /**
- * Add settings link on the plugin page.
+ * Add settings link on plugin page
  *
- * @param array  $links Plugin action links.
+ * @param array $links an array of links related to the plugin.
  * 
- * @since  1.0.0
- * @return array Updated plugin action links.
+ * @since  5.0.0
+ * @return array updatead array of links related to the plugin.
  */
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), function( $links ) {
-    $settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=stealth-login-page' ) ) . '">' . esc_html__( 'Settings', 'stealth-login-page' ) . '</a>';
+function stealth_login_page_settings_link( $links ) {
+    // Settings link.
+    $settings_link = '<a href="options-general.php?page=stealth-login-page">' . esc_html__( 'Settings', 'stealth-login-page' ) . '</a>';
+
     array_unshift( $links, $settings_link );
 
     return $links;
-} );
+}
+add_filter( "plugin_action_links_$plugin_name", 'stealth_login_page_settings_link' );

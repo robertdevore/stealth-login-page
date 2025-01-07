@@ -4,7 +4,7 @@
   * The plugin bootstrap file
   *
   * @link              https://robertdevore.com
-  * @since             1.0.0
+  * @since             5.0.0
   * @package           Stealth_Login_Page
   *
   * @wordpress-plugin
@@ -12,7 +12,7 @@
   * Plugin Name: Stealth Login Page
   * Description: Protect your dashboard without editing the .htaccess file -- the FIRST one that completely blocks remote bot login requests.
   * Plugin URI:  https://github.com/robertdevore/stealth-login-page/
-  * Version:     1.0.0
+  * Version:     5.0.0
   * Author:      Robert DeVore
   * Author URI:  https://robertdevore.com/
   * License:     GPL-2.0+
@@ -27,7 +27,15 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'includes/install.php';
+// Include the install plugin.
+$install_file = plugin_dir_path( __FILE__ ) . 'includes/install.php';
+
+if ( file_exists( $install_file ) ) {
+    require_once $install_file;
+    error_log( 'install.php was included successfully.' );
+} else {
+    error_log( 'install.php not found in includes directory.' );
+}
 
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
@@ -42,7 +50,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 $myUpdateChecker->setBranch( 'main' );
 
 // Define the plugin version.
-define( 'STEALTH_LOGIN_PAGE_VERSION', '1.0.0' );
+define( 'STEALTH_LOGIN_PAGE_VERSION', '5.0.0' );
 
 /*
   Copyright 2024 Robert DeVore
@@ -109,7 +117,7 @@ class Stealth_Login_Page {
      *
      * This method registers the settings page under the "Settings" menu in the WordPress admin dashboard.
      * 
-     * @since  1.0.0
+     * @since  5.0.0
      * @return void
      */
     public function add_settings_page() {
@@ -129,7 +137,7 @@ class Stealth_Login_Page {
      * the plugin, setting the authorization key, configuring the redirect URL, and
      * enabling the option to email the authorization key to the admin.
      *
-     * @since  1.0.0
+     * @since  5.0.0
      * @return void
      */
     public function render_settings_page() {
@@ -208,7 +216,7 @@ class Stealth_Login_Page {
      * sends an email to the admin with the authorization key. Displays a success message
      * after saving.
      * 
-     * @since  1.0.0
+     * @since  5.0.0
      * @return void
      */
     public function save_settings() {
@@ -253,7 +261,7 @@ class Stealth_Login_Page {
      * passed in the URL or validates an existing cookie. Redirects the user if the key is missing or incorrect.
      * Sets a cookie for subsequent requests once the key is validated successfully.
      * 
-     * @since  1.0.0
+     * @since  5.0.0
      * @return void
      */
     public function check_auth_key() {
