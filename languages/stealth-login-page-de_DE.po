@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stealth Login Page\n"
+"POT-Creation-Date: 2025-01-08 16:31-0500\n"
+"PO-Revision-Date: 2025-01-08 16:32-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: stealth-login-page.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: includes/install.php:133
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: includes/settings-page.php:21 includes/settings-page.php:66
+#, fuzzy
+msgid "Stealth Login Page Options"
+msgstr "Optionen der Stealth-Anmeldeseite"
+
+#: includes/settings-page.php:22
+#, fuzzy
+msgid "Stealth Login"
+msgstr "Stealth-Anmeldung"
+
+#: includes/settings-page.php:50 includes/settings-page.php:162
+#, fuzzy
+msgid "Stealth Login Authorization Code"
+msgstr "Stealth-Login-Autorisierungscode"
+
+#: includes/settings-page.php:52 includes/settings-page.php:164
+#, fuzzy, php-format
+msgid "Your current authorization code is: %s"
+msgstr "Ihr aktueller Autorisierungscode lautet: %s"
+
+#: includes/settings-page.php:76
+#, fuzzy
+msgid "Enable/Disable Stealth Login Page"
+msgstr "Aktivieren/Deaktivieren der Stealth-Login-Seite"
+
+#: includes/settings-page.php:81
+#, fuzzy
+msgid "Enable Stealth Mode"
+msgstr "Stealth-Modus aktivieren"
+
+#: includes/settings-page.php:85
+msgid "Authorization Code"
+msgstr "Autorisierungscode"
+
+#: includes/settings-page.php:88
+#, fuzzy
+msgid "Enter an authorization code:"
+msgstr "Geben Sie einen Autorisierungscode ein:"
+
+#: includes/settings-page.php:94
+msgid "Redirect URL"
+msgstr "Weiterleitungs-URL"
+
+#: includes/settings-page.php:97
+#, fuzzy
+msgid "URL to redirect unauthorized attempts to:"
+msgstr "URL, an die nicht autorisierte Versuche umgeleitet werden sollen:"
+
+#: includes/settings-page.php:103
+#, fuzzy
+msgid "Email Authorization Code"
+msgstr "E-Mail-Autorisierungscode"
+
+#: includes/settings-page.php:107
+#, fuzzy
+msgid "Email authorization code to admin"
+msgstr "E-Mail-Autorisierungscode an den Administrator"
+
+#: includes/settings-page.php:113
+msgid "Settings updated successfully."
+msgstr "Die Einstellungen wurden aktualisiert."
+
+#: includes/settings-page.php:119 stealth-login-page.php:194
+msgid "Save Settings"
+msgstr "Einstellungen speichern"
+
+#: includes/settings-page.php:171
+#, fuzzy
+msgid "Authorization code emailed to admin."
+msgstr ""
+"Der Autorisierungscode wird per E-Mail an den Administrator gesendet."
+
+#: includes/settings-page.php:173
+#, fuzzy
+msgid "Failed to email authorization code."
+msgstr "Autorisierungscode konnte nicht per E-Mail gesendet werden."
+
+#: stealth-login-page.php:126 stealth-login-page.php:153
+#, fuzzy
+msgid "Stealth Login Page Settings"
+msgstr "Einstellungen der Stealth-Login-Seite"
+
+#. Plugin Name of the plugin/theme
+#: stealth-login-page.php:127
+#, fuzzy
+msgid "Stealth Login Page"
+msgstr "Stealth Login Seite"
+
+#: stealth-login-page.php:155
+msgid "Support"
+msgstr "Support"
+
+#: stealth-login-page.php:158
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: stealth-login-page.php:176
+#, fuzzy
+msgid "Enable Stealth Login Page"
+msgstr "Stealth-Anmeldeseite aktivieren"
+
+#: stealth-login-page.php:180
+#, fuzzy
+msgid "Authorization Key:"
+msgstr "Berechtigungsschlüssel:"
+
+#: stealth-login-page.php:185
+msgid "Redirect URL:"
+msgstr "Umleitungs-URL:"
+
+#: stealth-login-page.php:191
+#, fuzzy
+msgid "Email the authorization code to the admin"
+msgstr "Senden Sie den Autorisierungscode per E-Mail an den Administrator"
+
+#: stealth-login-page.php:225
+msgid "You do not have permission to access this page."
+msgstr "Sie haben nicht die Berechtigung, diese Ansicht aufzurufen."
+
+#: stealth-login-page.php:244
+#, fuzzy
+msgid "Stealth Login Auth Key"
+msgstr "Stealth Login Auth Key"
+
+#: stealth-login-page.php:244
+#, fuzzy, php-format
+msgid "Your authorization key is: %s"
+msgstr "Ihr Autorisierungsschlüssel lautet: %s"
+
+#: stealth-login-page.php:247
+#, fuzzy
+msgid "Settings saved and email sent to admin with the authorization key."
+msgstr ""
+"Einstellungen werden gespeichert und eine E-Mail mit dem "
+"Autorisierungsschlüssel an den Administrator gesendet."
+
+#: stealth-login-page.php:249
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#. Plugin URI of the plugin/theme
+#, fuzzy
+msgid "https://github.com/robertdevore/stealth-login-page/"
+msgstr "https://github.com/robertdevore/stealth-login-page/"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid ""
+"Protect your dashboard without editing the .htaccess file -- the FIRST one "
+"that completely blocks remote bot login requests."
+msgstr ""
+"Schützen Sie Ihr Dashboard, ohne die .htaccess-Datei zu bearbeiten - die "
+"ERSTE Datei, die Login-Anfragen von Remote-Bots vollständig blockiert."
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "Robert DeVore"
+msgstr "Robert DeVore"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"

@@ -1,6 +1,8 @@
 # Stealth Login Page
 
-Stealth Login Page protects your WordPress® site by locking down access to the `wp-admin` and `wp-login.php` pages unless a secret `auth_key` parameter is passed. This plugin ensures a layer of obscurity for your login page, reducing brute-force attacks and unauthorized access attempts.
+Stealth Login Page protects your WordPress® site by locking down access to the `wp-admin` and `wp-login.php` pages unless a secret `auth_key` parameter is passed. 
+
+This plugin ensures a layer of obscurity for your login page, reducing brute-force attacks and unauthorized access attempts.
 
 ## Features
 

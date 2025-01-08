@@ -50,7 +50,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 $myUpdateChecker->setBranch( 'main' );
 
 // Define the plugin version.
-define( 'STEALTH_LOGIN_PAGE_VERSION', '5.0.0' );
+define( 'SLP_PLUGIN_VERSION', '5.0.0' );
 define( 'SLP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 /*
