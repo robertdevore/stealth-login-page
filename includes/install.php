@@ -10,8 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-define( 'SLP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-
 // Register activation and deactivation hooks.
 register_activation_hook( __FILE__, 'slp_on_activate' );
 register_deactivation_hook( __FILE__, 'slp_on_deactivate' );
@@ -72,7 +70,7 @@ function slp_activate_blog(): void {
  * @return void
  */
 function slp_deactivate_blog(): void {
-    // Cleanup tasks if needed, e.g., remove scheduled hooks.
+    // Cleanup tasks if needed.
 }
 
 /**
@@ -87,7 +85,7 @@ function slp_handle_multisite_activation( callable $callback ): void {
     global $wpdb;
 
     $original_blog_id = get_current_blog_id();
-    $blog_ids = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs}" );
+    $blog_ids         = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs}" );
 
     foreach ( $blog_ids as $blog_id ) {
         switch_to_blog( $blog_id );

@@ -28,7 +28,7 @@ add_action( 'admin_menu', function() {
     register_setting( 'slp_settings_group', 'slp_settings', [
         'sanitize_callback' => 'slp_sanitize_settings',
     ] );
-});
+} );
 
 /**
  * Render the settings page.
@@ -134,9 +134,9 @@ function slp_render_settings_page() {
  */
 function slp_sanitize_settings( $input ) {
     return [
-        'enable'        => isset( $input['enable'] ) ? 1 : 0,
-        'auth_key'      => sanitize_text_field( $input['auth_key'] ?? '' ),
-        'redirect_url'  => esc_url_raw( $input['redirect_url'] ?? '' ),
+        'enable'       => isset( $input['enable'] ) ? 1 : 0,
+        'auth_key'     => sanitize_text_field( $input['auth_key'] ?? '' ),
+        'redirect_url' => esc_url_raw( $input['redirect_url'] ?? '' ),
     ];
 }
 
@@ -179,14 +179,13 @@ add_action( 'admin_post_slp_save_settings', function () {
         wp_redirect( admin_url( 'options-general.php?page=stealth-login-page&settings_updated=1' ) );
         exit;
     }
-});
+} );
 
 // Display transient messages on the settings page.
 if ( $message = get_transient( 'slp_email_sent' ) ) {
     echo '<div class="success"><p>' . esc_html( $message ) . '</p></div>';
     delete_transient( 'slp_email_sent' );
 }
-
 if ( $message = get_transient( 'slp_email_failed' ) ) {
     echo '<div class="error"><p>' . esc_html( $message ) . '</p></div>';
     delete_transient( 'slp_email_failed' );

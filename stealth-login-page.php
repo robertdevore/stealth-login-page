@@ -5,7 +5,7 @@
   *
   * @link              https://robertdevore.com
   * @since             5.0.0
-  * @package           Stealth_Login_Page
+  * @package           SLP
   *
   * @wordpress-plugin
   *
@@ -51,6 +51,7 @@ $myUpdateChecker->setBranch( 'main' );
 
 // Define the plugin version.
 define( 'STEALTH_LOGIN_PAGE_VERSION', '5.0.0' );
+define( 'SLP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 /*
   Copyright 2024 Robert DeVore
