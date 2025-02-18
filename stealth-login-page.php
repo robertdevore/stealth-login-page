@@ -53,6 +53,16 @@ $myUpdateChecker->setBranch( 'main' );
 define( 'SLP_PLUGIN_VERSION', '5.0.0' );
 define( 'SLP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
+
+// Check if Composer's autoloader is already registered globally.
+if ( ! class_exists( 'RobertDevore\WPComCheck\WPComPluginHandler' ) ) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
+use RobertDevore\WPComCheck\WPComPluginHandler;
+
+new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/why-this-plugin-doesnt-support-wordpress-com-hosting/' );
+
 /*
   Copyright 2024 Robert DeVore
 
@@ -92,10 +102,6 @@ define( 'SLP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
-}
 
 class Stealth_Login_Page {
 
