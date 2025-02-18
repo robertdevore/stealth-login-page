@@ -63,6 +63,21 @@ use RobertDevore\WPComCheck\WPComPluginHandler;
 
 new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/why-this-plugin-doesnt-support-wordpress-com-hosting/' );
 
+/**
+ * Load plugin text domain for translations
+ * 
+ * @since 1.1.0
+ * @return void
+ */
+function slwp_load_textdomain() {
+    load_plugin_textdomain( 
+        'stealth-login-page', 
+        false, 
+        dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+    );
+}
+add_action( 'plugins_loaded', 'slwp_load_textdomain' );
+
 /*
   Copyright 2024 Robert DeVore
 
