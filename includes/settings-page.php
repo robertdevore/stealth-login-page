@@ -43,7 +43,7 @@ function slp_render_settings_page() {
         if ( isset( $_POST['email-admin'] ) && check_admin_referer( 'slp_settings_group-options' ) ) {
             $options     = get_option( 'slp_settings', [] );
             $admin_email = get_option( 'admin_email' );
-    
+
             if ( ! empty( $options['auth_key'] ) ) {
                 wp_mail(
                     $admin_email,
@@ -59,7 +59,7 @@ function slp_render_settings_page() {
             exit;
         }
     });
-        
+
     ?>
 
     <div class="wrap">

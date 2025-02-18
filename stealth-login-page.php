@@ -291,15 +291,13 @@ class Stealth_Login_Page {
 
         if ( isset( $_GET['auth_key'] ) ) {
             $passed_key = trim( sanitize_text_field( wp_unslash( $_GET['auth_key'] ) ) );
-            error_log( 'DEBUG: Passed Key = ' . $passed_key . ' | Saved Key = ' . $auth_key ); // Debugging log
             if ( $passed_key === $auth_key ) {
-                error_log( 'DEBUG: Auth key matched. Access granted.' );
                 setcookie( self::AUTH_COOKIE, '1', time() + 3600, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true );
                 return; // Correct key, allow access.
             }
-            error_log( 'ERROR: Auth key mismatch. Redirecting.' );
+            error_log( 'STEALTH LOGIN ERROR: Auth key mismatch. Redirecting.' );
         } else {
-            error_log( 'ERROR: Auth key is missing from URL. Redirecting.' );
+            error_log( 'STEALTH LOGIN ERROR: Auth key is missing from URL. Redirecting.' );
         }
         wp_redirect( $redirect_url );
         exit;
