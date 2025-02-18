@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stealth Login Page\n"
+"POT-Creation-Date: 2025-02-18 15:59-0500\n"
+"PO-Revision-Date: 2025-02-18 15:59-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: stealth-login-page.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: includes/install.php:133
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/settings-page.php:21 includes/settings-page.php:66
+msgid "Stealth Login Page Options"
+msgstr "Opciones de la página de inicio de sesión oculta"
+
+#: includes/settings-page.php:22
+msgid "Stealth Login"
+msgstr "Inicio de sesión sigiloso"
+
+#: includes/settings-page.php:50 includes/settings-page.php:162
+msgid "Stealth Login Authorization Code"
+msgstr "Código de autorización de inicio de sesión sigiloso"
+
+#: includes/settings-page.php:52 includes/settings-page.php:164
+#, php-format
+msgid "Your current authorization code is: %s"
+msgstr "Su código de autorización actual es: %s"
+
+#: includes/settings-page.php:76
+msgid "Enable/Disable Stealth Login Page"
+msgstr "Activar/desactivar la página de inicio de sesión oculta"
+
+#: includes/settings-page.php:81
+msgid "Enable Stealth Mode"
+msgstr "Activar el modo oculto"
+
+#: includes/settings-page.php:85
+msgid "Authorization Code"
+msgstr "Código de autorización"
+
+#: includes/settings-page.php:88
+msgid "Enter an authorization code:"
+msgstr "Introduzca un código de autorización:"
+
+#: includes/settings-page.php:94
+msgid "Redirect URL"
+msgstr "Redireccionar URL"
+
+#: includes/settings-page.php:97
+msgid "URL to redirect unauthorized attempts to:"
+msgstr "URL a la que redirigir los intentos no autorizados:"
+
+#: includes/settings-page.php:103
+msgid "Email Authorization Code"
+msgstr "Código de autorización de correo electrónico"
+
+#: includes/settings-page.php:107
+msgid "Email authorization code to admin"
+msgstr "Código de autorización por correo electrónico al administrador"
+
+#: includes/settings-page.php:113
+msgid "Settings updated successfully."
+msgstr "Configuración actualizada correctamente."
+
+#: includes/settings-page.php:119 stealth-login-page.php:215
+msgid "Save Settings"
+msgstr "Guardar Ajustes"
+
+#: includes/settings-page.php:171
+msgid "Authorization code emailed to admin."
+msgstr ""
+"Código de autorización enviado por correo electrónico al administrador."
+
+#: includes/settings-page.php:173
+msgid "Failed to email authorization code."
+msgstr ""
+"No se ha podido enviar el código de autorización por correo electrónico."
+
+#: stealth-login-page.php:147 stealth-login-page.php:174
+msgid "Stealth Login Page Settings"
+msgstr "Configuración de la página de inicio de sesión oculta"
+
+#. Plugin Name of the plugin/theme
+#: stealth-login-page.php:148
+msgid "Stealth Login Page"
+msgstr "Página de inicio de sesión Stealth"
+
+#: stealth-login-page.php:176
+msgid "Support"
+msgstr "Soporte"
+
+#: stealth-login-page.php:179
+msgid "Documentation"
+msgstr "Documentación"
+
+#: stealth-login-page.php:197
+msgid "Enable Stealth Login Page"
+msgstr "Activar la página de inicio de sesión oculta"
+
+#: stealth-login-page.php:201
+msgid "Authorization Key:"
+msgstr "Clave de autorización:"
+
+#: stealth-login-page.php:206
+msgid "Redirect URL:"
+msgstr "Redireccionar URL:"
+
+#: stealth-login-page.php:212
+msgid "Email the authorization code to the admin"
+msgstr ""
+"Enviar por correo electrónico el código de autorización al administrador"
+
+#: stealth-login-page.php:246
+msgid "You do not have permission to access this page."
+msgstr "No tiene permiso para acceder a esta página."
+
+#: stealth-login-page.php:265
+msgid "Stealth Login Auth Key"
+msgstr "Stealth Login Auth Key"
+
+#: stealth-login-page.php:265
+#, php-format
+msgid "Your authorization key is: %s"
+msgstr "Su clave de autorización es: %s"
+
+#: stealth-login-page.php:268
+msgid "Settings saved and email sent to admin with the authorization key."
+msgstr ""
+"Se guarda la configuración y se envía un correo electrónico al "
+"administrador con la clave de autorización."
+
+#: stealth-login-page.php:270
+msgid "Settings saved."
+msgstr "Ajustes guardados."
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/robertdevore/stealth-login-page/"
+msgstr "https://github.com/robertdevore/stealth-login-page/"
+
+#. Description of the plugin/theme
+msgid ""
+"Protect your dashboard without editing the .htaccess file -- the FIRST one "
+"that completely blocks remote bot login requests."
+msgstr ""
+"Proteja su panel de control sin editar el archivo .htaccess -- el PRIMERO "
+"que bloquea completamente las solicitudes de inicio de sesión de bots "
+"remotos."
+
+#. Author of the plugin/theme
+msgid "Robert DeVore"
+msgstr "Robert DeVore"
+
+#. Author URI of the plugin/theme
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"
