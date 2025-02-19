@@ -12,7 +12,7 @@
   * Plugin Name: Stealth Login Page
   * Description: Protect your dashboard without editing the .htaccess file -- the FIRST one that completely blocks remote bot login requests.
   * Plugin URI:  https://github.com/robertdevore/stealth-login-page/
-  * Version:     5.0.0
+  * Version:     5.0.1
   * Author:      Robert DeVore
   * Author URI:  https://robertdevore.com/
   * License:     GPL-2.0+
@@ -50,7 +50,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 $myUpdateChecker->setBranch( 'main' );
 
 // Define the plugin version.
-define( 'SLP_PLUGIN_VERSION', '5.0.0' );
+define( 'SLP_PLUGIN_VERSION', '5.0.1' );
 define( 'SLP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 
